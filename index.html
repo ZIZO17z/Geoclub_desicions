@@ -393,10 +393,10 @@
                     <!-- Tabs -->
                     <div class="flex bg-brand-input-bg rounded-xl p-1 mb-6 border border-brand-card-border gap-1">
                         <button id="tab-email" onclick="switchTab('email')" class="flex-1 py-2 sm:py-3 text-xs sm:text-sm font-semibold rounded-lg bg-brand-btn-active text-white transition-all flex items-center justify-center gap-1 sm:gap-2 min-h-[40px]" aria-pressed="true">
-                            <i class="fa-regular fa-envelope hidden sm:inline"></i> Email
+                            <i class="far fa-envelope hidden sm:inline"></i> Email
                         </button>
                         <button id="tab-phone" onclick="switchTab('phone')" class="flex-1 py-2 sm:py-3 text-xs sm:text-sm font-semibold rounded-lg text-brand-text-muted hover:text-white transition-all flex items-center justify-center gap-1 sm:gap-2 min-h-[40px]" aria-pressed="false">
-                            <i class="fa-solid fa-phone-volume hidden sm:inline"></i> Phone
+                            <i class="fas fa-phone hidden sm:inline"></i> Phone
                         </button>
                     </div>
 
@@ -413,7 +413,7 @@
                             >
                             <!-- Error Message -->
                             <p id="error-msg" class="text-red-400 text-xs mt-2 hidden" role="alert">
-                                <i class="fa-solid fa-circle-exclamation mr-1"></i> Application not found. Please try again.
+                                <i class="fas fa-exclamation-circle mr-1"></i> Application not found. Please try again.
                             </p>
                         </div>
 
@@ -492,10 +492,10 @@
 
         // --- SOCIAL LINKS CONSTANTS ---
         const links = {
-            whatsapp: { url: "https://chat.whatsapp.com/EZ46NTuL8mP6nVIEhDAF8m", icon: "fa-brands fa-whatsapp", color: "bg-[#25D366]", label: "WhatsApp" },
-            linkedin: { url: "https://www.linkedin.com/company/october-geology-club-ogc/", icon: "fa-brands fa-linkedin-in", color: "bg-[#0A66C2]", label: "LinkedIn" },
-            instagram: { url: "https://www.instagram.com/octgeologyclub?igsh=dXF0YXVxMmc0dWN0", icon: "fa-brands fa-instagram", color: "bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888]", label: "Instagram" },
-            facebook: { url: "https://www.facebook.com/share/1AmCLVjYeu/", icon: "fa-brands fa-facebook-f", color: "bg-[#1877F2]", label: "Facebook" }
+            whatsapp: { url: "https://chat.whatsapp.com/EZ46NTuL8mP6nVIEhDAF8m", icon: "fab fa-whatsapp", color: "bg-[#25D366]", label: "WhatsApp" },
+            linkedin: { url: "https://www.linkedin.com/company/october-geology-club-ogc/", icon: "fab fa-linkedin-in", color: "bg-[#0A66C2]", label: "LinkedIn" },
+            instagram: { url: "https://www.instagram.com/octgeologyclub?igsh=dXF0YXVxMmc0dWN0", icon: "fab fa-instagram", color: "bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888]", label: "Instagram" },
+            facebook: { url: "https://www.facebook.com/share/1AmCLVjYeu/", icon: "fab fa-facebook-f", color: "bg-[#1877F2]", label: "Facebook" }
         };
 
         let currentMode = 'email';
@@ -651,7 +651,7 @@
             if (isAccepted) {
                 statusHTML = `
                     <div class="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-green-500/20 text-green-400 mb-4 sm:mb-6">
-                        <i class="fa-solid fa-check text-2xl sm:text-4xl" aria-hidden="true"></i>
+                        <i class="fas fa-check-circle text-2xl sm:text-4xl" aria-hidden="true"></i>
                     </div>
                     ${nameHTML}
                     <div class="text-brand-gold font-title text-lg sm:text-xl mb-3 sm:mb-4 tracking-wider uppercase">Congratulations!</div>
@@ -677,7 +677,7 @@
             } else {
                 statusHTML = `
                     <div class="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-500/10 text-brand-text-muted mb-4 sm:mb-6">
-                        <i class="fa-solid fa-envelope-open-text text-2xl sm:text-3xl" aria-hidden="true"></i>
+                        <i class="fas fa-times-circle text-2xl sm:text-3xl" aria-hidden="true"></i>
                     </div>
                     ${nameHTML}
                     <div class="text-white/80 font-semibold text-base sm:text-lg mb-3 sm:mb-4">Update on your application</div>
