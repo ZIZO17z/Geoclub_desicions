@@ -3,14 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="October Geology Club - Application Status Portal">
-    <meta name="theme-color" content="#140c08">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="logo.ico">
-    <link rel="shortcut icon" href="logo.ico">
-    <link rel="apple-touch-icon" href="logo.ico">
+    <title>October Geology Club - Application Status</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,15 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Paytone+One&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
     
     <!-- Icons (FontAwesome) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p7QstZjt264LDF853IH34UL8p2item2xl09+/X4oapevMNqP2GYWRF0Mo7q3xsFt4zY9AhnwD60dNv5Cv9D" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Canvas Confetti for celebrations -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" integrity="sha512-rO9aEAMN3VhIIgpYdN7wJwKb+n7qOX2ypfT7xCYJBLeT/VB6XPNMX8KCRkEYVmzV9GswN+p9YChCNVQVSuTYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Canvas Confetti for "زينة" (Celebration Animation) -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-    <!-- Tailwind Config for Custom Colors based on the image -->
+    <!-- Tailwind Config for Custom Colors -->
     <script>
         tailwind.config = {
             theme: {
@@ -51,75 +44,24 @@
                     },
                     animation: {
                         'fade-in': 'fadeIn 0.5s ease-out forwards',
-                        'slide-up': 'slideUp 0.6s ease-out forwards',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     },
                     keyframes: {
                         fadeIn: {
                             '0%': { opacity: '0' },
                             '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
                         }
-                    },
-                    screens: {
-                        'xs': '320px',
-                        'sm': '640px',
-                        'md': '768px',
-                        'lg': '1024px',
-                        'xl': '1280px',
-                        '2xl': '1536px',
                     }
                 }
             }
         }
     </script>
 
-    <title>October Geology Club - Application Status</title>
-    
-    <!-- Security Headers -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' https: data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https:; frame-ancestors 'none';">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
-
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             background: linear-gradient(180deg, #24140d 0%, #0a0502 100%);
             min-height: 100vh;
             color: white;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* High contrast for accessibility */
-        @media (prefers-contrast: more) {
-            body {
-                background: linear-gradient(180deg, #2d1810 0%, #000000 100%);
-            }
-            .brand-gold {
-                color: #ffe66d;
-            }
-        }
-
-        /* Reduced motion for accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
         }
 
         .decorative-line {
@@ -165,20 +107,11 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
         }
 
-        .social-btn:focus {
-            outline: 2px solid #ffb03a;
-            outline-offset: 2px;
-        }
-
         /* Custom Input Focus */
         input:focus {
             outline: none;
             border-color: #7c3a15;
             box-shadow: 0 0 0 2px rgba(124, 58, 21, 0.3);
-        }
-
-        input::placeholder {
-            color: #7a6b5f;
         }
         
         /* Loading spinner */
@@ -201,8 +134,8 @@
         
         /* Logo Placeholder CSS */
         .logo-container {
-            width: clamp(120px, 25vw, 160px);
-            height: clamp(120px, 25vw, 160px);
+            width: 160px;
+            height: 160px;
             background: #fdf5e6;
             border-radius: 20px;
             display: flex;
@@ -222,60 +155,7 @@
             padding: 10px;
         }
 
-        /* Responsive typography */
-        h1 {
-            font-size: clamp(2rem, 8vw, 3rem);
-            line-height: 1.1;
-        }
-
-        h2 {
-            font-size: clamp(1.5rem, 5vw, 2rem);
-        }
-
-        /* Mobile optimizations */
-        @media (max-width: 640px) {
-            body {
-                padding-bottom: 20px;
-            }
-
-            .relative-wrapper {
-                min-height: auto;
-            }
-
-            input, button {
-                font-size: 16px;
-                -webkit-appearance: none;
-                appearance: none;
-            }
-
-            button {
-                min-height: 44px;
-                min-width: 44px;
-            }
-
-            .view-section {
-                position: relative;
-                top: auto;
-                left: auto;
-            }
-        }
-
-        /* Tablet optimizations */
-        @media (min-width: 641px) and (max-width: 1024px) {
-            .logo-container {
-                width: 150px;
-                height: 150px;
-            }
-        }
-
-        /* Dark mode support */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: linear-gradient(180deg, #24140d 0%, #0a0502 100%);
-            }
-        }
-
-        /* Video responsiveness */
+        /* Video Styles */
         #video-view {
             position: fixed;
             top: 0;
@@ -295,108 +175,74 @@
             object-fit: cover;
         }
 
-        /* Mobile video - constrained size */
         @media (max-width: 768px) {
             #video-view {
                 padding: 20px;
                 background: rgba(0, 0, 0, 0.95);
             }
-
             #decision-video {
-                max-width: 100%;
-                max-height: 90vh;
-                width: auto;
-                height: auto;
                 border-radius: 12px;
                 object-fit: contain;
-            }
-        }
-
-        /* Tablet video - slightly constrained */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            #decision-video {
-                max-width: 600px;
-                max-height: 600px;
-            }
-        }
-
-        /* Print styles */
-        @media print {
-            body {
-                background: white;
-                color: black;
-            }
-            .social-btn, button {
-                display: none;
-            }
-        }
-
-        /* Landscape mode adjustments */
-        @media (max-height: 600px) and (orientation: landscape) {
-            h1 {
-                font-size: 1.8rem;
+                height: auto;
+                max-height: 90vh;
             }
             .logo-container {
-                width: 100px;
-                height: 100px;
+                width: 120px;
+                height: 120px;
             }
-
-            #decision-video {
-                max-height: 80vh;
-            }
+            h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
-<body class="font-body antialiased flex flex-col items-center pt-4 md:pt-8 lg:pt-16 px-4 sm:px-6 md:px-8">
+<body class="font-body antialiased flex flex-col items-center pt-8 md:pt-16 px-4">
 
-    <!-- Audio elements for transition effect -->
-    <audio id="transition-audio" src="https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3" preload="auto" aria-label="Transition sound"></audio>
-    <audio id="success-audio" src="https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3" preload="auto" aria-label="Success sound"></audio>
-    
     <!-- FULLSCREEN VIDEO VIEW -->
     <div id="video-view" class="fixed inset-0 z-[100] bg-black transition-opacity duration-500 opacity-0 pointer-events-none flex items-center justify-center">
         <video id="decision-video" class="w-full h-full object-cover" playsinline>
             <source src="video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
     </div>
 
-    <div class="w-full max-w-md mx-auto z-10 relative px-2 sm:px-0">
+    <!-- Audio elements for transition effect -->
+    <audio id="transition-audio" src="https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3" preload="auto"></audio>
+    <audio id="success-audio" src="https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3" preload="auto"></audio>
+    
+    <div class="w-full max-w-md mx-auto z-10 relative">
         
         <!-- Header / Logo Area -->
-        <div class="text-center mb-6 sm:mb-8 animate-fade-in">
-            <div class="logo-container mb-4 sm:mb-6">
-                <!-- Fallback to a geology icon if the logo image isn't loaded -->
-                <img src="logo.ico" alt="OGC Logo" class="logo-inner-img" loading="lazy" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3220/3220815.png'" decoding="async">
+        <div class="text-center mb-8 animate-fade-in">
+            <div class="logo-container mb-6">
+                <!-- Fallback to a geology icon if the specific image URL isn't loaded -->
+                <img src="logo.ico" alt="OGC Logo" class="logo-inner-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3220/3220815.png'">
             </div>
             
-            <h1 class="font-title text-brand-gold mb-3 sm:mb-4 leading-tight tracking-wide" style="text-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+            <h1 class="font-title text-4xl md:text-5xl text-brand-gold mb-4 leading-tight tracking-wide" style="text-shadow: 0 4px 10px rgba(0,0,0,0.5);">
                 October Geology<br>Club
             </h1>
             
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-brand-subtitle font-mono text-xs font-semibold tracking-[0.2em]">
-                <div class="decorative-line hidden sm:block"></div>
-                <span class="whitespace-nowrap">APPLICATION STATUS PORTAL</span>
-                <div class="decorative-line hidden sm:block"></div>
+            <div class="flex items-center justify-center gap-4 text-brand-subtitle font-mono text-xs font-semibold tracking-[0.2em]">
+                <div class="decorative-line"></div>
+                <span>APPLICATION STATUS PORTAL</span>
+                <div class="decorative-line"></div>
             </div>
         </div>
 
         <div class="relative-wrapper">
             <!-- PORTAL FORM VIEW -->
             <div id="form-view" class="view-section view-active">
-                <div class="bg-brand-card border border-brand-card-border rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl">
+                <div class="bg-brand-card border border-brand-card-border rounded-2xl p-6 md:p-8 shadow-2xl">
                     
-                    <p class="text-brand-text-muted text-center text-xs sm:text-sm mb-6 font-medium">
+                    <p class="text-brand-text-muted text-center text-sm mb-6 font-medium">
                         Enter your email or phone to reveal your application decision.
                     </p>
 
                     <!-- Tabs -->
-                    <div class="flex bg-brand-input-bg rounded-xl p-1 mb-6 border border-brand-card-border gap-1">
-                        <button id="tab-email" onclick="switchTab('email')" class="flex-1 py-2 sm:py-3 text-xs sm:text-sm font-semibold rounded-lg bg-brand-btn-active text-white transition-all flex items-center justify-center gap-1 sm:gap-2 min-h-[40px]" aria-pressed="true">
-                            <i class="far fa-envelope hidden sm:inline"></i> Email
+                    <div class="flex bg-brand-input-bg rounded-xl p-1 mb-6 border border-brand-card-border">
+                        <button id="tab-email" onclick="switchTab('email')" class="flex-1 py-3 text-sm font-semibold rounded-lg bg-brand-btn-active text-white transition-all flex items-center justify-center gap-2">
+                            <i class="fa-regular fa-envelope"></i> Email
                         </button>
-                        <button id="tab-phone" onclick="switchTab('phone')" class="flex-1 py-2 sm:py-3 text-xs sm:text-sm font-semibold rounded-lg text-brand-text-muted hover:text-white transition-all flex items-center justify-center gap-1 sm:gap-2 min-h-[40px]" aria-pressed="false">
-                            <i class="fas fa-phone hidden sm:inline"></i> Phone
+                        <button id="tab-phone" onclick="switchTab('phone')" class="flex-1 py-3 text-sm font-semibold rounded-lg text-brand-text-muted hover:text-white transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone-volume"></i> Phone
                         </button>
                     </div>
 
@@ -407,17 +253,16 @@
                                 type="text" 
                                 id="user-input" 
                                 placeholder="your.email@example.com" 
-                                class="w-full bg-brand-input-bg border border-brand-input-border text-white text-sm rounded-xl px-4 sm:px-5 py-3 sm:py-4 transition-all focus:ring-2 focus:ring-brand-btn-active"
+                                class="w-full bg-brand-input-bg border border-brand-input-border text-white text-sm rounded-xl px-5 py-4 transition-all"
                                 required
-                                autocomplete="off"
                             >
                             <!-- Error Message -->
-                            <p id="error-msg" class="text-red-400 text-xs mt-2 hidden" role="alert">
-                                <i class="fas fa-exclamation-circle mr-1"></i> Application not found. Please try again.
+                            <p id="error-msg" class="text-red-400 text-xs mt-2 absolute -bottom-5 left-0 hidden">
+                                <i class="fa-solid fa-circle-exclamation mr-1"></i> Application not found. Please try again.
                             </p>
                         </div>
 
-                        <button type="submit" id="submit-btn" class="w-full bg-brand-btn-active hover:bg-brand-btn-hover text-white font-bold py-3 sm:py-4 rounded-xl transition-all shadow-lg flex justify-center items-center gap-2 min-h-[44px] text-sm sm:text-base">
+                        <button type="submit" id="submit-btn" class="w-full bg-brand-btn-active hover:bg-brand-btn-hover text-white font-bold py-4 rounded-xl transition-all shadow-lg flex justify-center items-center gap-2">
                             <span>Check My Status</span>
                         </button>
                     </form>
@@ -426,7 +271,7 @@
 
             <!-- RESULT VIEW -->
             <div id="result-view" class="view-section view-hidden">
-                <div id="result-card" class="bg-brand-card border border-brand-card-border rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl text-center transform transition-all duration-700">
+                <div id="result-card" class="bg-brand-card border border-brand-card-border rounded-2xl p-8 shadow-2xl text-center transform transition-all duration-700">
                     
                     <!-- Dynamic Content Container -->
                     <div id="result-content">
@@ -434,14 +279,14 @@
                     </div>
 
                     <!-- Social Links -->
-                    <div class="mt-6 sm:mt-8 border-t border-brand-input-border pt-4 sm:pt-6">
-                        <p class="text-xs text-brand-text-muted mb-3 sm:mb-4 font-mono tracking-widest uppercase">Connect With Us</p>
-                        <div id="social-links" class="flex justify-center gap-3 sm:gap-4 flex-wrap">
+                    <div class="mt-8 border-t border-brand-input-border pt-6">
+                        <p class="text-xs text-brand-text-muted mb-4 font-mono tracking-widest uppercase">Connect With Us</p>
+                        <div id="social-links" class="flex justify-center gap-4 flex-wrap">
                             <!-- Populated by JS -->
                         </div>
                     </div>
 
-                    <button onclick="resetForm()" class="mt-6 sm:mt-8 text-brand-text-muted hover:text-white text-xs sm:text-sm font-medium transition-colors underline underline-offset-4 decoration-brand-text-muted/30">
+                    <button onclick="resetForm()" class="mt-8 text-brand-text-muted hover:text-white text-sm font-medium transition-colors underline underline-offset-4 decoration-brand-text-muted/30">
                         Check another application
                     </button>
                 </div>
@@ -449,20 +294,13 @@
         </div>
 
         <!-- Footer -->
-        <div class="text-center mt-6 sm:mt-8 text-brand-text-muted/50 text-xs pb-6 sm:pb-8 font-mono tracking-wide">
-            <p>Powered by the forces of the Earth • OGC 2026</p>
+        <div class="text-center mt-8 text-brand-text-muted/50 text-xs pb-8 font-mono tracking-wide">
+            Powered by the forces of the Earth • OGC 2026
         </div>
 
     </div>
 
     <script>
-        // --- SECURITY: Sanitize input to prevent XSS ---
-        function sanitizeInput(input) {
-            const div = document.createElement('div');
-            div.textContent = input;
-            return div.innerHTML;
-        }
-
         // --- DATASET ---
         const applicants = [
             { name: "Taha Yassin", emails: ["taha.yasin0124@gmail.com"], phones: ["01014946160"], status: "rejected" },
@@ -490,12 +328,12 @@
             { name: "Mohamed Mohamed Gamal", emails: ["mohamed.1025115@stemoctober.moe.edu.eg"], phones: ["01558525460"], status: "accepted" },
         ];
 
-        // --- SOCIAL LINKS CONSTANTS ---
+        // --- SOCIAL LINKS CONSTANTS (From your file) ---
         const links = {
-            whatsapp: { url: "https://chat.whatsapp.com/EZ46NTuL8mP6nVIEhDAF8m", icon: "fab fa-whatsapp", color: "bg-[#25D366]", label: "WhatsApp" },
-            linkedin: { url: "https://www.linkedin.com/company/october-geology-club-ogc/", icon: "fab fa-linkedin-in", color: "bg-[#0A66C2]", label: "LinkedIn" },
-            instagram: { url: "https://www.instagram.com/octgeologyclub?igsh=dXF0YXVxMmc0dWN0", icon: "fab fa-instagram", color: "bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888]", label: "Instagram" },
-            facebook: { url: "https://www.facebook.com/share/1AmCLVjYeu/", icon: "fab fa-facebook-f", color: "bg-[#1877F2]", label: "Facebook" }
+            whatsapp: { url: "https://chat.whatsapp.com/EZ46NTuL8mP6nVIEhDAF8m", icon: "fa-brands fa-whatsapp", color: "bg-[#25D366]" },
+            linkedin: { url: "https://www.linkedin.com/company/october-geology-club-ogc/", icon: "fa-brands fa-linkedin-in", color: "bg-[#0A66C2]" },
+            instagram: { url: "https://www.instagram.com/octgeologyclub?igsh=dXF0YXVxMmc0dWN0", icon: "fa-brands fa-instagram", color: "bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888]" },
+            facebook: { url: "https://www.facebook.com/share/1AmCLVjYeu/", icon: "fa-brands fa-facebook-f", color: "bg-[#1877F2]" }
         };
 
         let currentMode = 'email';
@@ -514,21 +352,16 @@
             inputField.value = '';
 
             if (mode === 'email') {
-                tabEmail.className = "flex-1 py-2 sm:py-3 text-xs sm:text-sm font-semibold rounded-lg bg-brand-btn-active text-white transition-all flex items-center justify-center gap-1 sm:gap-2 min-h-[40px]";
-                tabPhone.className = "flex-1 py-2 sm:py-3 text-xs sm:text-sm font-semibold rounded-lg text-brand-text-muted hover:text-white transition-all flex items-center justify-center gap-1 sm:gap-2 min-h-[40px]";
-                tabEmail.setAttribute('aria-pressed', 'true');
-                tabPhone.setAttribute('aria-pressed', 'false');
+                tabEmail.className = "flex-1 py-3 text-sm font-semibold rounded-lg bg-brand-btn-active text-white transition-all flex items-center justify-center gap-2";
+                tabPhone.className = "flex-1 py-3 text-sm font-semibold rounded-lg text-brand-text-muted hover:text-white transition-all flex items-center justify-center gap-2";
                 inputField.type = 'email';
                 inputField.placeholder = 'your.email@example.com';
             } else {
-                tabPhone.className = "flex-1 py-2 sm:py-3 text-xs sm:text-sm font-semibold rounded-lg bg-brand-btn-active text-white transition-all flex items-center justify-center gap-1 sm:gap-2 min-h-[40px]";
-                tabEmail.className = "flex-1 py-2 sm:py-3 text-xs sm:text-sm font-semibold rounded-lg text-brand-text-muted hover:text-white transition-all flex items-center justify-center gap-1 sm:gap-2 min-h-[40px]";
-                tabEmail.setAttribute('aria-pressed', 'false');
-                tabPhone.setAttribute('aria-pressed', 'true');
+                tabPhone.className = "flex-1 py-3 text-sm font-semibold rounded-lg bg-brand-btn-active text-white transition-all flex items-center justify-center gap-2";
+                tabEmail.className = "flex-1 py-3 text-sm font-semibold rounded-lg text-brand-text-muted hover:text-white transition-all flex items-center justify-center gap-2";
                 inputField.type = 'tel';
                 inputField.placeholder = 'e.g. 01014946160 or +591...';
             }
-            inputField.focus();
         }
 
         // Form Submit Handler
@@ -545,7 +378,7 @@
             submitBtn.innerHTML = '<span class="loader"></span> Processing...';
             submitBtn.disabled = true;
 
-            await new Promise(r => setTimeout(r, 600)); // Shorter delay since we have a video now
+            await new Promise(r => setTimeout(r, 600)); // Slightly shorter delay as video adds suspense
 
             let foundApplicant = null;
             
@@ -565,6 +398,7 @@
             }
 
             if (foundApplicant) {
+                // Play video overlay transition BEFORE showing result
                 playVideoThenShowResult(foundApplicant);
             } else {
                 errorMsg.classList.remove('hidden');
@@ -573,7 +407,7 @@
             }
         }
 
-        // Play the video transition first
+        // --- VIDEO TRANSITION LOGIC ---
         function playVideoThenShowResult(applicant) {
             const formView = document.getElementById('form-view');
             const videoView = document.getElementById('video-view');
@@ -592,10 +426,9 @@
                 video.currentTime = 0;
                 const playPromise = video.play();
                 
-                // Handle autoplay block edge cases
                 if (playPromise !== undefined) {
                     playPromise.catch(error => {
-                        console.log("Auto-play prevented, skipping directly to result.", error);
+                        console.log("Auto-play prevented", error);
                         finishVideoAndShowResult(applicant);
                     });
                 }
@@ -607,24 +440,22 @@
             };
         }
 
-        // Transition from video to final result
         function finishVideoAndShowResult(applicant) {
             const videoView = document.getElementById('video-view');
-            
-            // Hide Fullscreen Video View
             videoView.classList.remove('opacity-100', 'pointer-events-auto');
             videoView.classList.add('opacity-0', 'pointer-events-none');
             
             setTimeout(() => {
                 showResult(applicant);
-            }, 500); // Wait for the video overlay to fade out
+            }, 500);
         }
 
+        // Build the HTML for social links using exact format from uploaded file
         function buildSocialLink(platform) {
             const data = links[platform];
             return `
-                <a href="${sanitizeInput(data.url)}" target="_blank" rel="noopener noreferrer" class="social-btn w-12 h-12 sm:w-14 sm:h-14 rounded-full text-white flex items-center justify-center text-lg sm:text-xl ${data.color}" aria-label="Visit our ${data.label} page" title="Visit our ${data.label} page">
-                    <i class="${data.icon}" aria-hidden="true"></i>
+                <a href="${data.url}" target="_blank" class="social-btn w-12 h-12 rounded-full text-white flex items-center justify-center text-xl ${data.color}">
+                    <i class="${data.icon}"></i>
                 </a>
             `;
         }
@@ -641,25 +472,25 @@
             audioTransition.currentTime = 0;
             audioTransition.play().catch(e => console.log("Audio play blocked by browser:", e));
 
-            // 2. Prepare Content - SECURITY: Sanitize applicant name
             const isAccepted = applicant.status === "accepted";
-            const sanitizedName = sanitizeInput(applicant.name);
-            let nameHTML = `<h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-white">${sanitizedName}</h2>`;
+            
+            let nameHTML = `<h2 class="text-2xl md:text-3xl font-bold mb-2 text-white">${applicant.name}</h2>`;
             let statusHTML = '';
             let socialHTML = '';
 
             if (isAccepted) {
                 statusHTML = `
-                    <div class="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-green-500/20 text-green-400 mb-4 sm:mb-6">
-                        <i class="fas fa-check-circle text-2xl sm:text-4xl" aria-hidden="true"></i>
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-500/20 text-green-400 mb-6">
+                        <i class="fa-solid fa-check text-4xl"></i>
                     </div>
                     ${nameHTML}
-                    <div class="text-brand-gold font-title text-lg sm:text-xl mb-3 sm:mb-4 tracking-wider uppercase">Congratulations!</div>
-                    <p class="text-brand-text-muted text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
+                    <div class="text-brand-gold font-title text-xl mb-4 tracking-wider uppercase">Congratulations!</div>
+                    <p class="text-brand-text-muted text-sm leading-relaxed mb-6">
                         You have been officially <strong class="text-green-400">Accepted</strong> into the October Geology Club! We are thrilled to have you join us. Please join our community groups below to get started.
                     </p>
                 `;
                 
+                // All Links including WhatsApp 
                 socialHTML = `
                     ${buildSocialLink('whatsapp')}
                     ${buildSocialLink('linkedin')}
@@ -667,7 +498,7 @@
                     ${buildSocialLink('facebook')}
                 `;
 
-                // Play Success Audio & Confetti
+                // Play Success Audio and Fire Confetti
                 setTimeout(() => {
                     audioSuccess.currentTime = 0;
                     audioSuccess.play().catch(e => console.log(e));
@@ -676,16 +507,17 @@
 
             } else {
                 statusHTML = `
-                    <div class="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-500/10 text-brand-text-muted mb-4 sm:mb-6">
-                        <i class="fas fa-times-circle text-2xl sm:text-3xl" aria-hidden="true"></i>
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-red-500/10 text-brand-text-muted mb-6">
+                        <i class="fa-solid fa-envelope-open-text text-3xl"></i>
                     </div>
                     ${nameHTML}
-                    <div class="text-white/80 font-semibold text-base sm:text-lg mb-3 sm:mb-4">Update on your application</div>
-                    <p class="text-brand-text-muted text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">
+                    <div class="text-white/80 font-semibold text-lg mb-4">Update on your application</div>
+                    <p class="text-brand-text-muted text-sm leading-relaxed mb-6">
                         Thank you for your interest in joining the October Geology Club. Unfortunately, we are unable to offer you a spot at this time. We had many highly qualified applicants. We encourage you to follow our socials and apply again in the future!
                     </p>
                 `;
 
+                // Links EXCEPT WhatsApp
                 socialHTML = `
                     ${buildSocialLink('linkedin')}
                     ${buildSocialLink('instagram')}
@@ -696,45 +528,41 @@
             resultContent.innerHTML = statusHTML;
             socialLinks.innerHTML = socialHTML;
 
-            // 3. Show Result Card
+            // Display Result Block
             resultView.classList.remove('view-hidden');
             resultView.classList.add('view-active');
+            
+            // Re-enable the submit button underneath
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.innerHTML = '<span>Check My Status</span>';
+            submitBtn.disabled = false;
         }
 
+        // Reset Form
         function resetForm() {
             const formView = document.getElementById('form-view');
             const resultView = document.getElementById('result-view');
-            const videoView = document.getElementById('video-view');
             const inputField = document.getElementById('user-input');
-            const submitBtn = document.getElementById('submit-btn');
 
             inputField.value = '';
-            submitBtn.innerHTML = '<span>Check My Status</span>';
-            submitBtn.disabled = false;
             
             resultView.classList.remove('view-active');
             resultView.classList.add('view-hidden');
-            
-            // Ensure video overlay is hidden
-            videoView.classList.remove('opacity-100', 'pointer-events-auto');
-            videoView.classList.add('opacity-0', 'pointer-events-none');
             
             setTimeout(() => {
                 formView.classList.remove('view-hidden');
                 formView.classList.add('view-active');
                 inputField.focus();
-                // Scroll to top on mobile
-                if (window.innerWidth < 768) {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
             }, 300);
         }
 
+        // Beautiful Confetti (زينة) Logic (From your uploaded file)
         function fireConfetti() {
             var duration = 3000;
             var end = Date.now() + duration;
 
             (function frame() {
+                // Launch confetti from left and right edges
                 confetti({
                     particleCount: 5,
                     angle: 60,
